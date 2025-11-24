@@ -1,102 +1,133 @@
+/* Large screens to medium (upto 1400px) */
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
+    min-height: 80vh;
+    margin-bottom: 4rem;
   }
+
   .about-containers {
     flex-wrap: wrap;
   }
-  #contact,
-  #projects {
-    height: fit-content;
+
+  #projects,
+  #contact {
+    height: auto;
   }
 }
 
+/* Tablets / small laptops (upto 1200px) */
 @media screen and (max-width: 1200px) {
+  /* Nav switch */
   #desktop-nav {
     display: none;
   }
   #hamburger-nav {
     display: flex;
   }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
+
+  /* Section flow */
   #profile,
   .section-container {
     display: block;
   }
+
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+
+  /* Arrow hide on smaller viewports */
   .arrow {
     display: none;
   }
+
+  /* Let sections grow based on content */
   section,
   .section-container {
-    height: fit-content;
+    height: auto;
   }
+
   section {
     margin: 0 5%;
   }
+
+  /* Profile image size */
   .section__pic-container {
     width: 275px;
     height: 275px;
     margin: 0 auto 2rem;
   }
+
   .about-containers {
     margin-top: 0;
   }
 }
 
+/* Mobile (upto 600px) */
 @media screen and (max-width: 600px) {
+  /* Let contact + footer breathe */
   #contact,
   footer {
-    height: 40vh;
+    height: auto;
   }
+
   #profile {
-    height: 83vh;
-    margin-bottom: 0;
+    min-height: 80vh;
+    margin-bottom: 1.5rem;
   }
+
   article {
     font-size: 1rem;
   }
+
   footer nav {
-    height: fit-content;
+    height: auto;
     margin-bottom: 2rem;
   }
+
   .about-containers,
   .contact-info-upper-container,
   .btn-container {
     flex-wrap: wrap;
   }
+
   .contact-info-container {
-    margin: 0;
+    margin: 0.5rem 0;
   }
+
   .contact-info-container p,
   .nav-links li a {
     font-size: 1rem;
   }
+
   .experience-sub-title {
     font-size: 1.25rem;
   }
+
   .logo {
     font-size: 1.5rem;
   }
+
   .nav-links {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
+
   .section__pic-container {
     width: auto;
     height: 46vw;
     justify-content: center;
   }
+
   .section__text__p2 {
     font-size: 1.25rem;
   }
+
   .title {
     font-size: 2rem;
   }
+
   .text-container {
     text-align: justify;
   }
