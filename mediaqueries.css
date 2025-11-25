@@ -61,6 +61,15 @@
   .about-containers {
     margin-top: 0;
   }
+
+  /* projects layout */
+  .projects-grid {
+    flex-direction: column;
+  }
+
+  .ai-images .project-img {
+    height: 200px;
+  }
 }
 
 /* Mobile (upto 600px) */
@@ -130,5 +139,24 @@
 
   .text-container {
     text-align: justify;
+  }
+
+  /* projects spacing */
+  .projects-group {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .projects-subtitle {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .ai-images {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    margin: 0 1.5rem;
   }
 }
