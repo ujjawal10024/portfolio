@@ -13,6 +13,10 @@
   #contact {
     height: auto;
   }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* Tablets / small laptops (upto 1200px) */
@@ -62,18 +66,18 @@
     margin-top: 0;
   }
 
-  /* projects layout */
   .projects-grid {
-    flex-direction: column;
-  }
-
-  .ai-images .project-img {
-    height: 200px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* Mobile (upto 600px) */
 @media screen and (max-width: 600px) {
+  /* Hide custom cursor on touch devices */
+  .cursor-dot {
+    display: none;
+  }
+
   /* Let contact + footer breathe */
   #contact,
   footer {
@@ -141,22 +145,11 @@
     text-align: justify;
   }
 
-  /* projects spacing */
-  .projects-group {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .projects-subtitle {
-    font-size: 1.5rem;
-    text-align: left;
-  }
-
-  .ai-images {
-    grid-template-columns: 1fr;
-  }
-
   section {
-    margin: 0 1.5rem;
+    margin: 0 1.25rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }
