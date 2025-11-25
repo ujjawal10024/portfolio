@@ -1,58 +1,52 @@
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
-  if (!menu || !icon) return;
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  /* ---- Scroll reveal ---- */
-  const revealEls = document.querySelectorAll(".reveal");
+/* CUSTOM CURSOR */
 
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+const cursorDot = document.querySelector(".cursor-dot");
 
-    revealEls.forEach((el) => observer.observe(el));
-  } else {
-    // Fallback: just show all
-    revealEls.forEach((el) => el.classList.add("active"));
-  }
-
-  /* ---- Cursor follower (desktop only) ---- */
-  const cursorDot = document.querySelector(".cursor-dot");
-  if (!cursorDot) return;
-
-  const isTouchDevice =
-    "ontouchstart" in window || navigator.maxTouchPoints > 0;
-
-  if (isTouchDevice) {
-    cursorDot.style.display = "none";
-    return;
-  }
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+if (cursorDot && window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener("mousemove", (e) => {
+    cursorDot.style.opacity = "1";
+    cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
   });
 
-  const render = () => {
-    cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-    requestAnimationFrame(render);
-  };
+  window.addEventListener("mouseleave", () => {
+    cursorDot.style.opacity = "0";
+  });
 
-  render();
-});
+  window.addEventListener("mousedown", () => {
+    cursorDot.style.transform += " scale(0.7)";
+  });
+
+  window.addEventListener("mouseup", () => {
+    cursorDot.style.transform = cursorDot.style.transform.replace(
+      " scale(0.7)",
+      ""
+    );
+  });
+}
+
+/* SCROLL REVEAL */
+
+const revealElements = document.querySelectorAll(".reveal, .project-card");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.2,
+  }
+);
+
+revealElements.forEach((el) => observer.observe(el));
