@@ -1,5 +1,5 @@
 # 🚀 Ujjawal Shakya – Personal Tech Portfolio
-[![Portfolio Live](https://img.shields.io/badge/Portfolio-LIVE-brightgreen)](https://ujjawal10024.github.io/portfolio/)
+[![Portfolio Live](https://img.shields.io/badge/Portfolio-LIVE-00C853?style=for-the-badge&logo=github&logoColor=white)](https://ujjawal10024.github.io/portfolio/)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 ![Built With](https://img.shields.io/badge/Built%20With-HTML%20%7C%20CSS%20%7C%20JS-orange)
@@ -101,5 +101,20 @@ Each project includes:
 2. Open the folder
 3. Double-click `index.html`
    OR use Live Server in VS Code
+
+---
+
+## 🤝 Connect With Me
+
+I'm always open to collaboration, internships, and interesting tech discussions.
+
+- 📧 **Email:** ujjawalshakya94@gmail.com  
+- 💼 **LinkedIn:** https://www.linkedin.com/in/ujjawal-shakya-964297273/  
+- 💻 **GitHub:** https://github.com/ujjawal10024  
+
+---
+
+> Built with consistency, curiosity, and a long-term vision in tech.
+
 
 
